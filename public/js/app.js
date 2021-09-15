@@ -20265,7 +20265,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  setup: function setup() {
+    var sidebarNavWrapper = document.querySelector('.sidebar-nav-wrapper');
+    var mainWrapper = document.querySelector('.main-wrapper');
+    var menuToggleButton = document.querySelector('#menu-toggle');
+    var menuToggleButtonIcon = document.querySelector('#menu-toggle i');
+    var overlay = document.querySelector('.overlay');
+    menuToggleButton.addEventListener('click', function () {
+      sidebarNavWrapper.classList.toggle('active');
+      overlay.classList.add('active');
+      mainWrapper.classList.toggle('active');
+
+      if (document.body.clientWidth > 1200) {
+        if (menuToggleButtonIcon.classList.contains('lni-chevron-left')) {
+          menuToggleButtonIcon.classList.remove('lni-chevron-left');
+          menuToggleButtonIcon.classList.add('lni-menu');
+        } else {
+          menuToggleButtonIcon.classList.remove('lni-menu');
+          menuToggleButtonIcon.classList.add('lni-chevron-left');
+        }
+      } else {
+        if (menuToggleButtonIcon.classList.contains('lni-chevron-left')) {
+          menuToggleButtonIcon.classList.remove('lni-chevron-left');
+          menuToggleButtonIcon.classList.add('lni-menu');
+        }
+      }
+    });
+    overlay.addEventListener('click', function () {
+      sidebarNavWrapper.classList.remove('active');
+      overlay.classList.remove('active');
+      mainWrapper.classList.remove('active');
+    });
+  }
+});
 
 /***/ }),
 
@@ -20440,6 +20473,49 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" e-Commerce ");
 
+var _hoisted_9 = {
+  "class": "nav-item nav-item-has-children"
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#0",
+  "class": "collapsed",
+  "data-bs-toggle": "collapse",
+  "data-bs-target": "#ddmenu_2",
+  "aria-controls": "ddmenu_2",
+  "aria-expanded": "false",
+  "aria-label": "Toggle navigation"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "icon"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "lni lni-layout"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text"
+}, "Pages")], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = {
+  id: "ddmenu_2",
+  "class": "collapse dropdown-nav"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "lni lni-arrow-right"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Settings ");
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "blank-page.html"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "lni lni-arrow-right"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Blank Page ")])], -1
+/* HOISTED */
+);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
 
@@ -20453,7 +20529,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })])])])])])]);
+  })])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: "/settings"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_12, _hoisted_13];
+    }),
+    _: 1
+    /* STABLE */
+
+  })]), _hoisted_14])])])])]);
 }
 
 /***/ }),

@@ -5,7 +5,11 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import MainLayout from './Layout/MainLayout'
 
+
+
 InertiaProgress.init();
+
+
 
 createInertiaApp({
   resolve: async (name) => { 
@@ -19,6 +23,9 @@ createInertiaApp({
 	  app.provide('$route',window.route)
       app.use(plugin)
       app.mount(el)
+	  
   },
 });
+
+
 

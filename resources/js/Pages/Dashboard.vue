@@ -28,7 +28,17 @@
 </template>
 
 <script>
+	import {usePage} from "@inertiajs/inertia-vue3";
+	import {computed} from "vue";
 	export default {
-		
+		setup() {
+			const items = computed(() => usePage().props.value.items )
+			return {
+				items
+			}
+		},
+		created() {
+			console.log(this.items)
+		}
 	}
 </script>

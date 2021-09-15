@@ -11,9 +11,10 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ asset('assets/js/main.js') }}"></script>
+	
     @routes
     <script src="{{ asset('/js/app.js') }}" defer></script>
+	<script src="{{ asset('assets/js/main.js') }}" defer></script>
 </head>
 <body>
   @inertia

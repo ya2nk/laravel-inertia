@@ -27,6 +27,34 @@
 					  </li>
 					</ul>
 				</li>
+				
+				<li class="nav-item nav-item-has-children">
+					<a
+					  href="#0"
+					  class="collapsed"
+					  data-bs-toggle="collapse"
+					  data-bs-target="#ddmenu_2"
+					  aria-controls="ddmenu_2"
+					  aria-expanded="false"
+					  aria-label="Toggle navigation"
+					>
+					  <span class="icon"><i class="lni lni-layout"></i></span>
+					  <span class="text">Pages</span>
+					</a>
+					<ul id="ddmenu_2" class="collapse dropdown-nav">
+					  <li>
+						<Link href="/settings">
+						  <i class="lni lni-arrow-right"></i> Settings
+						</Link>
+					  </li>
+
+					  <li>
+						<a href="blank-page.html">
+						  <i class="lni lni-arrow-right"></i> Blank Page
+						</a>
+					  </li>
+					</ul>
+				 </li>
 			</ul>
 		</nav>
 	</aside>
