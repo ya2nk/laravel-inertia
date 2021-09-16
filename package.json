@@ -20,6 +20,7 @@
         "@inertiajs/inertia-vue3": "^0.5.2",
         "@inertiajs/progress": "^0.2.6",
         "@vue/compiler-sfc": "^3.2.11",
+        "mitt": "^3.0.0",
         "vue": "^3.2.11",
         "vue-loader": "^16.5.0"
     }

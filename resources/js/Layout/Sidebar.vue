@@ -1,5 +1,5 @@
 <template>
-	<aside class="sidebar-nav-wrapper">
+	<aside class="sidebar-nav-wrapper" :class="{ active: isOpen }">
 		<div class="navbar-logo">
 			<a href="index.html">
 				<img src="assets/images/logo/logo.svg" alt="logo" />
@@ -58,13 +58,31 @@
 			</ul>
 		</nav>
 	</aside>
+	<div class="overlay" :class="{active:isOpen}" @click="overlayClicked"></div>
 </template>
 <script>
 	import { Link } from '@inertiajs/inertia-vue3'
 	
+
 	export default {
+		data() {
+			return {
+				isOpen: false
+			};
+		},
+		mounted() { 
+			this.emitter.on("toggle-sidebar", isOpen => {
+				this.isOpen = isOpen;
+			});
+		},
 		components: {
 			Link
+		},
+		methods: {
+			overlayClicked() {
+				this.isOpen = !this.isOpen;
+        		this.emitter.emit("toggle-sidebar", this.isOpen);
+			}
 		}
 	}
 </script>

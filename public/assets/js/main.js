@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("inertia:success", function() {
    
 
         /* ========= sidebar toggle ======== */

@@ -5,11 +5,11 @@
             <div class="col-lg-5 col-md-5 col-6">
               <div class="header-left d-flex align-items-center">
                 <div class="menu-toggle-btn mr-20">
-                  <button
+                  <button @click="toggleSidebar"
                     id="menu-toggle"
                     class="main-btn primary-btn btn-hover"
                   >
-                    <i class="lni lni-chevron-left me-2"></i> Menu
+                    <i class="lni me-2" :class="iconMenuClass"></i> Menu
                   </button>
                 </div>
                 <div class="header-search d-none d-md-flex">
@@ -199,9 +199,25 @@
       </header>
 </template>
 <script>
-	export default {
-		setup() {
-			
-		}
+ 
+export default {
+   
+		data() {
+      return {
+        sidebarOpen: false,
+        iconMenuClass:'lni-chevron-left'
+      };
+    },
+    methods: {
+      toggleSidebar() {
+        if (this.iconMenuClass == 'lni-chevron-left') {
+          this.iconMenuClass = 'lni-menu';
+        } else {
+          this.iconMenuClass = 'lni-chevron-left';
+        }
+        this.sidebarOpen = !this.sidebarOpen;
+        this.emitter.emit("toggle-sidebar", this.sidebarOpen);
+      }
+    }
 	}
 </script>
