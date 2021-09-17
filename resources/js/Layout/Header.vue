@@ -124,7 +124,7 @@
                     <li>
                       <a href="#0">
                         <div class="image">
-                          <img src="assets/images/lead/lead-2.png" alt="" />
+                          <img :src="asset('assets/images/lead/lead-2.png')" alt="" />
                         </div>
                         <div class="content">
                           <h6>Anee Lee</h6>
@@ -157,7 +157,7 @@
                         <h6>John Doe</h6>
                         <div class="image">
                           <img
-                            src="assets/images/profile/profile-image.png"
+                            :src="asset('assets/images/profile/profile-image.png')"
                             alt=""
                           />
                           <span class="status"></span>
@@ -202,19 +202,31 @@
  
 export default {
    
-		data() {
+    data() {
       return {
         sidebarOpen: false,
         iconMenuClass:'lni-chevron-left'
       };
     },
+    mounted() {
+      this.emitter.on('overlay-clicked',isOpen => {
+        this.sidebarOpen = isOpen
+      })
+    },
     methods: {
       toggleSidebar() {
-        if (this.iconMenuClass == 'lni-chevron-left') {
-          this.iconMenuClass = 'lni-menu';
+        if(document.body.clientWidth > 1200) {
+			if (this.iconMenuClass == 'lni-chevron-left') {
+              this.iconMenuClass = 'lni-menu';
+            } else {
+              this.iconMenuClass = 'lni-chevron-left';
+            }
+            
         } else {
-          this.iconMenuClass = 'lni-chevron-left';
+            this.iconMenuClass = 'lni-menu';
+            
         }
+        
         this.sidebarOpen = !this.sidebarOpen;
         this.emitter.emit("toggle-sidebar", this.sidebarOpen);
       }

@@ -5,7 +5,7 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import MainLayout from './Layout/MainLayout'
 import mitt from 'mitt';
-
+import Asset from './Helpers/Asset'
 
 InertiaProgress.init();
 
@@ -23,6 +23,7 @@ createInertiaApp({
 	  app.config.globalProperties.emitter = emitter
 	  app.provide('$route',window.route)
       app.use(plugin)
+	  app.mixin(Asset)
       app.mount(el)
 	  
   },

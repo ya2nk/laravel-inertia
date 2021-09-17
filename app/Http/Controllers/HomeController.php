@@ -17,4 +17,9 @@ class HomeController extends Controller
         $items = ['item1','item2'];
         return Inertia::render('Dashboard',compact('items'));
     }
+    
+    public function settings()
+    {
+        return Inertia::render('Settings');
+    }
 }

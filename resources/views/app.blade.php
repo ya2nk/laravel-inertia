@@ -11,8 +11,10 @@
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-	
-    @routes
+	<script>
+		window._asset = '{{ asset('') }}';
+    </script>
+	@routes
     <script src="{{ asset('/js/app.js') }}" defer></script>
 	<script src="{{ asset('assets/js/main.js') }}" defer></script>
 </head>
